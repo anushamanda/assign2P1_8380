@@ -1,5 +1,9 @@
 from django import forms
-from .models import Customer, Stock, Investment
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+from .models import Customer, Stock, Investment, MutualFund
+
+
 
 class CustomerForm(forms.ModelForm):
     class Meta:
@@ -14,3 +18,10 @@ class InvestmentForm(forms.ModelForm):
    class Meta:
        model = Investment
        fields = ('customer', 'category', 'description', 'acquired_value', 'acquired_date', 'recent_date', 'recent_value')
+
+class MutualfundForm(forms.ModelForm):
+    class Meta:
+        model = MutualFund
+        fields = ('customer', 'category', 'description', 'acquired_value', 'acquired_date', 'recent_date', 'recent_value')
+
+
